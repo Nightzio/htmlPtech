@@ -1,0 +1,32 @@
+html,body {
+  	height : 100%;
+  	background-image : url("../img/matrice.png");
+	background-attachment : fixed;
+	background-repeat : no-repeat;
+	background-size : cover; 
+	background-position : top center;
+}
+
+#MainContainer{
+	background-image : url("../img/logo.png"), linear-gradient(to right, rgba(157,35,30,1), rgba(227,45,37,1), rgba(157,33,30,1));
+	background-repeat : no-repeat, no-repeat;
+	background-position : left center, center center;
+	background-size : auto 100%, auto;
+	text-align : center;
+}
+
+.display-5{ /*Main Title*/
+	font-size : 200%;
+	font-weight : bold;
+	color : white;
+}
+
+.lead{ /*sub title*/
+	font-size : 160%;
+	color : white;
+}
+
+.jumbotron{ /*bandeau*/
+	padding-top : 15px;
+	padding-bottom : 15px;
+}
