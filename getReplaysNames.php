@@ -7,7 +7,6 @@ error_reporting(E_ALL);
 
 
 
-//$dir    = '/usr/local/nginx/tmp/hls/';
 $scanned_dir = array_diff(scandir(URL_REPLAY), array('..', '.'));
 $replays = "";
 $replays = preg_grep('~\.(mp4)$~',$scanned_dir);

@@ -1,6 +1,9 @@
 <?php
 require "constants.php";
 session_start();
+//---------------------------------------------------------------------------
+// /!\ décommenter les lignes ci dessous pour réactiver la page de connexion 
+//----------------------vvvv-------------------------------------------------
 
 //if(!empty($_POST['disconnect'])) {
 //    session_destroy();
@@ -9,16 +12,9 @@ session_start();
 //}
 //if ( isset( $_SESSION['username'] ) ) {
 //					$username=$_SESSION['username'];
-					$username="Utilisateur";
-					//$dir    = '/usr/local/nginx/tmp/hls/';
 					$scanned_dir = array_diff(scandir(URL_HLS), array('..', '.'));
 					$streams = "";
 					$streams = preg_grep('~\.(m3u8)$~',$scanned_dir);
-					//foreach(preg_grep('~\.(m3u8)$~',$scanned_dir) as $p)
-					//{
-						//array_push($streams,substr($s, 0, strrpos($s, ".")));
-						//echo $p;
-					//};
 					$LivesCount = count($streams);
 					$lives =array();
 					foreach($streams as $l){
@@ -67,7 +63,7 @@ session_start();
 			</li>
 			<!-- Menu Replay -->
 			<li class="nav-item">
-				<span class="nav-link replays-count" onclick="window.location.href='http://52.233.238.49/replay.php'"> Replay <span class="badge badge-pill badge-danger">&nbsp;</span> </span>
+				<span class="nav-link replays-count" onclick="window.location.href='http://65.52.158.223/replay.php'"> Replay <span class="badge badge-pill badge-danger">&nbsp;</span> </span>
 			</li>
 		</ul>
 		<span class="navbar-text mr-2">

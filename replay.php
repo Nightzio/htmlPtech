@@ -3,6 +3,10 @@
 require "constants.php";
 session_start();
 
+//---------------------------------------------------------------------------
+// /!\ décommenter les lignes ci dessous pour réactiver la page de connexion 
+//----------------------vvvv-------------------------------------------------
+
 //if(!empty($_POST['disconnect'])) {
 //    session_destroy();
 //	header('Location:'.PAGE_INDEX);
@@ -10,15 +14,9 @@ session_start();
 //}
 //if ( isset( $_SESSION['username'] ) ) {
 //					$username=$_SESSION['username'];
-					$username="Utilisateur";
 					$scanned_dir = array_diff(scandir(URL_REPLAY), array('..', '.'));
 					$replays = "";
 					$replays = preg_grep('~\.(mp4)$~',$scanned_dir);
-					//foreach(preg_grep('~\.(m3u8)$~',$scanned_dir) as $p)
-					//{
-						//array_push($streams,substr($s, 0, strrpos($s, ".")));
-						//echo $p;
-					//};
 					$ReplaysCount = count($replays);
 					$replays =array();
 					foreach($replays as $r){
@@ -65,7 +63,7 @@ session_start();
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0 ul-hs">
 			<!-- Retour -->
 			<li class="nav-item dropdown">
-				<span class="nav-link return" onclick="window.location.href='http://52.233.238.49/'"><span> Retour </span> </span>
+				<span class="nav-link return" onclick="window.location.href='http://65.52.158.223/'"><span> Retour </span> </span>
 			</li>
 			<!-- Menu Replay -->
 			<li class="nav-item dropdown">

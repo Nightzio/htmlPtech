@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 
 
 
-$dir    = '/usr/local/nginx/tmp/hls/';
+
 $scanned_dir = array_diff(scandir(URL_HLS), array('..', '.'));
 $streams = "";
 $streams = preg_grep('~\.(m3u8)$~',$scanned_dir);
