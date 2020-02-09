@@ -14,6 +14,7 @@ session_start();
 //}
 //if ( isset( $_SESSION['username'] ) ) {
 //					$username=$_SESSION['username'];
+					$username="Utilisateur"; //affectation temporaire en l'absence d'indentification de connexion. A supprimer. 
 					$scanned_dir = array_diff(scandir(URL_REPLAY), array('..', '.'));
 					$replays = "";
 					$replays = preg_grep('~\.(mp4)$~',$scanned_dir);

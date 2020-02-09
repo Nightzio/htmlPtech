@@ -12,6 +12,7 @@ session_start();
 //}
 //if ( isset( $_SESSION['username'] ) ) {
 //					$username=$_SESSION['username'];
+					$username="Utilisateur"; //affectation temporaire en l'absence d'indentification de connexion. A supprimer. 
 					$scanned_dir = array_diff(scandir(URL_HLS), array('..', '.'));
 					$streams = "";
 					$streams = preg_grep('~\.(m3u8)$~',$scanned_dir);
