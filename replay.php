@@ -1,4 +1,3 @@
-
 <?php
 require "constants.php";
 session_start();
@@ -64,7 +63,10 @@ session_start();
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0 ul-hs">
 			<!-- Retour -->
 			<li class="nav-item dropdown">
-				<span class="nav-link return" onclick="window.location.href='http://65.52.158.223/'"><span> Retour </span> </span>
+<!-- =================================================== -->			
+<!-- MODIFIER IP_ADDR par l'adresse IP du serveur utilisé-->
+<!-- =================================================== -->		
+				<span class="nav-link return" onclick="window.location.href='http://IP_ADDR/'"><span> Retour </span> </span>
 			</li>
 			<!-- Menu Replay -->
 			<li class="nav-item dropdown">
@@ -120,8 +122,11 @@ session_start();
 		});	
 	});
 
+<!-- =================================================== -->			
+<!-- MODIFIER IP_ADDR dans la chaine (balise <source...) par l'adresse IP du serveur utilisé-->
+<!-- =================================================== -->
 	$(document).on('click', '.link', function(e) {
-		$("#MainRow").append('<div id="videoContainer-'+event.target.id+'" class="pl-3 col"><h5 class="card-title">'+event.target.id+'<span class="btn btn-danger ml-5 close-video" name="'+event.target.id+'"> Fermer</span></h5><video id="my-video-'+event.target.id+'" class="video-js" controls preload="auto" width="340" height="264" poster="img/drones.jpg" data-setup="{}"><source src="http://52.233.238.49/replay/'+event.target.id+'.mp4" type="video/mp4" /><p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p></video></div>');	
+		$("#MainRow").append('<div id="videoContainer-'+event.target.id+'" class="pl-3 col"><h5 class="card-title">'+event.target.id+'<span class="btn btn-danger ml-5 close-video" name="'+event.target.id+'"> Fermer</span></h5><video id="my-video-'+event.target.id+'" class="video-js" controls preload="auto" width="340" height="264" poster="img/drones.jpg" data-setup="{}"><source src="http://IP_ADDR/replay/'+event.target.id+'.mp4" type="video/mp4" /><p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p></video></div>');	
 		videojs("my-video-"+event.target.id).ready(function(){
 			var myPlayer = this;
 			myPlayer.play();

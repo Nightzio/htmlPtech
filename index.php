@@ -64,7 +64,10 @@ session_start();
 			</li>
 			<!-- Menu Replay -->
 			<li class="nav-item">
-				<span class="nav-link replays-count" onclick="window.location.href='http://65.52.158.223/replay.php'"> Replay <span class="badge badge-pill badge-danger">&nbsp;</span> </span>
+<!-- ====================================================================================== -->			
+<!-- MODIFIER IP_ADDR dans la chaine (balise <source...) par l'adresse IP du serveur utilisé-->
+<!-- ====================================================================================== -->
+				<span class="nav-link replays-count" onclick="window.location.href='http://IP_ADDR/replay.php'"> Replay <span class="badge badge-pill badge-danger">&nbsp;</span> </span>
 			</li>
 		</ul>
 		<span class="navbar-text mr-2">
@@ -117,9 +120,11 @@ session_start();
 			xmlhttp.send();
 		});	
 	});
-
+<!-- ====================================================================================== -->			
+<!-- MODIFIER IP_ADDR dans la chaine (balise <source...) par l'adresse IP du serveur utilisé-->
+<!-- ====================================================================================== -->
 	$(document).on('click', '.link', function(e) {
-		$("#MainRow").append('<div id="videoContainer-'+event.target.id+'" class="pl-3 col"><h5 class="card-title">'+event.target.id+'<span class="btn btn-danger ml-5 close-video" name="'+event.target.id+'"> Fermer</span></h5><video id="my-video-'+event.target.id+'" class="video-js" controls preload="auto" width="340" height="264" poster="img/drones.jpg" data-setup="{}"><source src="http://52.233.238.49/hls/'+event.target.id+'.m3u8" type="application/x-mpegURL" /><p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p></video></div>');	
+		$("#MainRow").append('<div id="videoContainer-'+event.target.id+'" class="pl-3 col"><h5 class="card-title">'+event.target.id+'<span class="btn btn-danger ml-5 close-video" name="'+event.target.id+'"> Fermer</span></h5><video id="my-video-'+event.target.id+'" class="video-js" controls preload="auto" width="340" height="264" poster="img/drones.jpg" data-setup="{}"><source src="http://IP_ADDR/hls/'+event.target.id+'.m3u8" type="application/x-mpegURL" /><p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p></video></div>');	
 		videojs("my-video-"+event.target.id).ready(function(){
 		var myPlayer = this;
 		myPlayer.play();
